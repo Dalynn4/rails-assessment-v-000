@@ -7,7 +7,7 @@ function Guide(attributes){
 
 Guide.success = function(json){
   debugger
-  json.sort(function(a, b) {
+  json.guides.sort(function(a, b) {
   var titleA = a.title.toUpperCase(); // ignore upper and lowercase
   var titleB = b.title.toUpperCase(); // ignore upper and lowercase
   if (titleA < titleB) {
