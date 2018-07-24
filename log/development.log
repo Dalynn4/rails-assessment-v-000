@@ -26448,3 +26448,180 @@ Processing by WelcomeController#home as HTML
 Completed 200 OK in 308ms (Views: 306.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/signin" for 24.144.29.208 at 2018-07-24 12:54:26 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_form_for_users.html.erb (19.0ms)
+  Rendered sessions/new.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 89ms (Views: 71.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/signin" for 24.144.29.208 at 2018-07-24 12:54:41 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Y7RkyGE/y51YzgdczCOy6L88kd7LpVP/kuVVmOz3SyGrGct6pftZqjX6bW9fljwX9g+9BFoMUU6VQOoVu6nhg==", "user"=>{"user_name"=>"randall", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "randall"], ["LIMIT", 1]]
+Redirected to http://67.205.152.27:37341/users/2
+Completed 302 Found in 104ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2" for 24.144.29.208 at 2018-07-24 12:54:42 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGuide Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "guides" WHERE "guides"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (31.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 86ms (Views: 81.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/2/guides" for 24.144.29.208 at 2018-07-24 13:03:01 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#guides as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mGuide Load (0.3ms)[0m  [1m[34mSELECT "guides".* FROM "guides" WHERE "guides"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (22.03ms)
+Completed 200 OK in 65ms (Views: 62.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/games/3/guides/4" for 24.144.29.208 at 2018-07-24 13:03:07 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GuidesController#show as HTML
+  Parameters: {"game_id"=>"3", "id"=>"4"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGuide Load (0.3ms)[0m  [1m[34mSELECT  "guides".* FROM "guides" WHERE "guides"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering guides/show.html.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered guides/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 52ms (Views: 34.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/2" for 24.144.29.208 at 2018-07-24 13:03:21 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGuide Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "guides" WHERE "guides"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 41ms (Views: 39.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games" for 24.144.29.208 at 2018-07-24 13:03:24 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games/1" for 24.144.29.208 at 2018-07-24 13:03:32 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GamesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mGuide Load (0.3ms)[0m  [1m[34mSELECT "guides".* FROM "guides" WHERE "guides"."game_id" = ?[0m  [["game_id", 1]]
+[active_model_serializers] Rendered GameSerializer with ActiveModelSerializers::Adapter::Attributes (7.7ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games/1/guides" for 24.144.29.208 at 2018-07-24 13:03:39 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GuidesController#index as */*
+  Parameters: {"game_id"=>"1"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mGuide Load (0.1ms)[0m  [1m[34mSELECT "guides".* FROM "guides" WHERE "guides"."game_id" = ?[0m  [["game_id", 1]]
+[active_model_serializers] Rendered GameSerializer with ActiveModelSerializers::Adapter::Attributes (3.4ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games/2" for 24.144.29.208 at 2018-07-24 13:03:43 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GamesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mGuide Load (0.1ms)[0m  [1m[34mSELECT "guides".* FROM "guides" WHERE "guides"."game_id" = ?[0m  [["game_id", 2]]
+[active_model_serializers] Rendered GameSerializer with ActiveModelSerializers::Adapter::Attributes (2.69ms)
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games/3" for 24.144.29.208 at 2018-07-24 13:03:46 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GamesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mGuide Load (0.7ms)[0m  [1m[34mSELECT "guides".* FROM "guides" WHERE "guides"."game_id" = ?[0m  [["game_id", 3]]
+[active_model_serializers] Rendered GameSerializer with ActiveModelSerializers::Adapter::Attributes (3.93ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/games/3/guides" for 24.144.29.208 at 2018-07-24 13:03:47 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GuidesController#index as */*
+  Parameters: {"game_id"=>"3"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mGuide Load (0.1ms)[0m  [1m[34mSELECT "guides".* FROM "guides" WHERE "guides"."game_id" = ?[0m  [["game_id", 3]]
+[active_model_serializers] Rendered GameSerializer with ActiveModelSerializers::Adapter::Attributes (3.25ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games/4" for 24.144.29.208 at 2018-07-24 13:03:48 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GamesController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mGuide Load (0.1ms)[0m  [1m[34mSELECT "guides".* FROM "guides" WHERE "guides"."game_id" = ?[0m  [["game_id", 4]]
+[active_model_serializers] Rendered GameSerializer with ActiveModelSerializers::Adapter::Attributes (3.28ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games/4/guides" for 24.144.29.208 at 2018-07-24 13:03:49 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GuidesController#index as */*
+  Parameters: {"game_id"=>"4"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mGuide Load (0.2ms)[0m  [1m[34mSELECT "guides".* FROM "guides" WHERE "guides"."game_id" = ?[0m  [["game_id", 4]]
+[active_model_serializers] Rendered GameSerializer with ActiveModelSerializers::Adapter::Attributes (3.39ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games/4" for 24.144.29.208 at 2018-07-24 13:03:51 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuide Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "guides" WHERE "guides"."game_id" = ? LIMIT ?[0m  [["game_id", 4], ["LIMIT", 1]]
+  [1m[36mGuide Load (0.2ms)[0m  [1m[34mSELECT "guides".* FROM "guides" WHERE "guides"."game_id" = ?[0m  [["game_id", 4]]
+  Rendered layouts/_form_for_guides.html.erb (9.6ms)
+  Rendered games/show.html.erb within layouts/application (15.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 51.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/games/4/guides" for 24.144.29.208 at 2018-07-24 13:04:08 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GuidesController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vc4g2u6bPM3heKabCjrY1FHEfmEGo6bPBJqbTOGmhkbi7JZkJYguhTzMdzPEdA7vrOCy0mzlAsXAhA2y1Pv87A==", "guide"=>{"title"=>"new guides", "body"=>"new guides stuff", "user_id"=>"2", "game_id"=>"4"}, "game_id"=>"4"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGuide Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "guides" WHERE "guides"."title" = ? LIMIT ?[0m  [["title", "new guides"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Guide Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "guides" WHERE "guides"."title" = ? LIMIT ?[0m  [["title", "new guides"], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "guides" ("title", "user_id", "game_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "new guides"], ["user_id", 2], ["game_id", 4], ["body", "new guides stuff"], ["created_at", "2018-07-24 13:04:08.846521"], ["updated_at", "2018-07-24 13:04:08.846521"]]
+  [1m[35m (50.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mGuide Load (0.1ms)[0m  [1m[34mSELECT "guides".* FROM "guides" WHERE "guides"."game_id" = ?[0m  [["game_id", 4]]
+[active_model_serializers] Rendered GameSerializer with ActiveModelSerializers::Adapter::Attributes (2.89ms)
+Completed 200 OK in 69ms (Views: 4.4ms | ActiveRecord: 52.9ms)
+
+
