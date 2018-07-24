@@ -28,6 +28,8 @@ Guide.newGuideFailure = function(json){
 Guide.showGuides = function(e){
   e.preventDefault()
   //$.get(this.href).done(Guide.success)
+  console.log(this)
+
   fetch(this.href).
     then(response => response.json()).
     then(json => Guide.success(json))
