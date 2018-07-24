@@ -18,6 +18,7 @@ Guide.success = function(json){
   // names must be equal
   return 0;
 });
+debugger
   var $ol = $("div.show_guides ol")
   $ol.html("")
   for(const newGuide of json.guides){
