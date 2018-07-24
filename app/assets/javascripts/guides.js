@@ -6,7 +6,18 @@ function Guide(attributes){
 }
 
 Guide.success = function(json){
-  debugger
+  json.sort(function(a, b) {
+  var titleA = a.title.toUpperCase(); // ignore upper and lowercase
+  var titleB = b.title.toUpperCase(); // ignore upper and lowercase
+  if (titleA < titleB) {
+    return -1;
+  }
+  if (titleA > titleB) {
+    return 1;
+  }
+  // names must be equal
+  return 0;
+});
   var $ol = $("div.show_guides ol")
   $ol.html("")
   for(const newGuide of json.guides){
