@@ -5,6 +5,7 @@ function Game(attributes){
 }
 
 Game.success = function(json){
+  debugger
   var $div = $("div.show_games")
   var $ol = $("div.show_guides ol")
   $div.html("")
