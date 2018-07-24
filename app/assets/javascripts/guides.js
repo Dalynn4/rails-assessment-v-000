@@ -6,6 +6,7 @@ function Guide(attributes){
 }
 
 Guide.success = function(json){
+  debugger
   var $ol = $("div.show_guides ol")
   $ol.html("")
   for(const newGuide of json.guides){
@@ -30,9 +31,9 @@ Guide.showGuides = function(e){
   //$.get(this.href).done(Guide.success)
   console.log(this)
 
-  fetch(this.href).
-    then(response => response.json()).
-    then(json => Guide.success(json))
+  fetch(this.href)
+    .then(response => response.json())
+    .then(json => Guide.success(json))
 }
 
 Guide.newGuide = function(e){
