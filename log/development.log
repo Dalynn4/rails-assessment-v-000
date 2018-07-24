@@ -26439,3 +26439,12 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 24.144.29.208 at 2018-07-24 12:53:00 +0000
+Cannot render console from 24.144.29.208! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 308ms (Views: 306.9ms | ActiveRecord: 0.0ms)
+
+
